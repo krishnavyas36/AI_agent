@@ -1,0 +1,41 @@
+Origin,Destination,Distance_km,Weight_kg,Urgency,Mode,ETA_days,Cost
+Los Angeles,Houston,2450,900,High,TL,3,1500
+San Francisco,Seattle,1300,300,Low,LTL,4,800
+Chicago,New York,1300,1200,High,TL,2,1600
+Dallas,Atlanta,1300,400,Medium,LTL,3,1000
+Miami,Charlotte,1100,800,Medium,Drayage,3,1100
+Denver,Phoenix,950,1000,Low,Transload,5,950
+Boston,Philadelphia,500,600,High,TL,1,900
+Las Vegas,San Diego,540,200,Low,LTL,3,600
+Detroit,Indianapolis,460,700,Medium,Drayage,2,850
+Austin,Kansas City,1200,950,High,TL,3,1450
+Milwaukee,Des Moines,1330,1561,High,TL,3,2825
+Columbus,Toledo,2416,1940,Low,Drayage,4,5761
+Columbus,Toledo,2494,760,Low,Transload,4,2503
+Nashville,Louisville,2950,1360,High,Drayage,6,5159
+Knoxville,Chattanooga,1218,143,High,Transload,3,527
+Cincinnati,Cleveland,1328,424,High,TL,5,836
+Columbus,Toledo,1374,1197,Low,TL,1,2136
+Tucson,Las Cruces,328,1718,Low,Transload,4,1030
+Milwaukee,Des Moines,1486,271,Medium,Transload,2,760
+Providence,Hartford,1853,886,High,Transload,2,2345
+New Orleans,Birmingham,961,217,High,LTL,6,536
+Houston,Denver,1701,1243,Low,LTL,2,2882
+Nashville,Louisville,600,352,Medium,Drayage,3,644
+Spokane,Boise,1754,883,High,Drayage,2,2178
+Omaha,Wichita,1692,1144,High,Transload,2,2496
+Spokane,Boise,1256,1798,High,TL,3,2877
+Knoxville,Chattanooga,1030,661,High,LTL,5,1152
+Columbus,Toledo,2694,807,High,Transload,2,2914
+Columbus,Toledo,2162,1154,High,Transload,3,3255
+Albuquerque,El Paso,2518,1708,Low,Transload,6,5549
+Nashville,Louisville,327,739,Medium,Transload,2,415
+Baltimore,Pittsburgh,2291,1913,High,LTL,3,5378
+Providence,Hartford,2189,1775,Medium,TL,6,5016
+Baltimore,Pittsburgh,1436,1589,Medium,LTL,4,2922
+Providence,Hartford,466,1949,Low,Transload,1,1357
+Houston,Denver,1902,1811,High,LTL,1,4532
+Baltimore,Pittsburgh,487,1189,Medium,Drayage,1,923
+Atlanta,Orlando,2443,658,Low,Transload,4,2201
+Providence,Hartford,1543,367,Low,LTL,6,1048
+Phoenix,Salt Lake City,1134,151,High,Transload,1,477
