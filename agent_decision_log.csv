@@ -1,3 +1,6 @@
 Distance_km,Weight_kg,Urgency,Recommended_Mode,Estimated_Cost,Estimated_ETA_days
 95.0,8.0,Low,LTL,48.3,4
 56.0,5.0,Low,LTL,28.5,4
+500.0,1000.0,Low,Transload,400.0,5
+500.0,1000.0,Low,Transload,400.0,5
+500.0,1000.0,Low,Transload,400.0,5
