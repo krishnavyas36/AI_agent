@@ -1,10 +1,12 @@
+# logistics_agent/main.py (Step 8: Add cost and ETA estimation to AI Agent)
+
 import pandas as pd
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-#krishnavyas
+
 def load_data(filepath):
     try:
         df = pd.read_csv(filepath)
@@ -68,14 +70,12 @@ def train_ml_model(df):
         y_pred = clf.predict(X_test)
         y_pred_labels = le_mode.inverse_transform(y_pred)
 
-        # Add ML predictions to DataFrame
         df.loc[X_test.index, 'ML_Predicted_Mode'] = y_pred_labels
 
         print("\nML Model Evaluation:")
         print(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
         print(classification_report(y_test, y_pred, target_names=le_mode.classes_))
 
-        # Export to CSV
         output_path = "output_with_predictions.csv"
         df.to_csv(output_path, index=False)
         print(f"\nResults exported to {output_path}")
@@ -84,6 +84,24 @@ def train_ml_model(df):
     else:
         print("\nRequired columns for ML model are missing.")
         return None, None, None
+
+
+def estimate_cost_eta(distance, weight, mode):
+    base_cost_per_km = {
+        'LTL': 0.5,
+        'TL': 0.8,
+        'Drayage': 0.9,
+        'Transload': 0.6
+    }
+    eta_by_mode = {
+        'LTL': 4,
+        'TL': 2,
+        'Drayage': 3,
+        'Transload': 5
+    }
+    cost = distance * base_cost_per_km.get(mode, 0.7) + (weight * 0.1)
+    eta = eta_by_mode.get(mode, 3)
+    return round(cost, 2), eta
 
 
 def run_agent(model, le_urgency, le_mode):
@@ -99,7 +117,11 @@ def run_agent(model, le_urgency, le_mode):
             pred_code = model.predict(features)[0]
             mode = le_mode.inverse_transform([pred_code])[0]
 
-            print(f"\nRecommended Delivery Mode: {mode}\n")
+            cost, eta = estimate_cost_eta(distance, weight, mode)
+
+            print(f"\nRecommended Delivery Mode: {mode}")
+            print(f"Estimated Cost: ${cost}")
+            print(f"Estimated ETA: {eta} days\n")
 
             cont = input("Would you like to test another shipment? (yes/no): ").strip().lower()
             if cont != 'yes':
