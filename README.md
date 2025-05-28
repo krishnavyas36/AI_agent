@@ -77,6 +77,14 @@ Estimated cost based on distance × mode-based rates
 
 Estimated delivery time (ETA) per mode
 
+'TL' → 'Truckload (TL)'
+
+'LTL' → 'Less-Than-Truckload (LTL)'
+
+'Drayage' → 'Drayage (short-distance)'
+
+'Transload' → 'Transload (intermodal)'
+
 📊 This mimics real decision-support tools used by logistics planners.
 
 5. Confidence Scores & Explanation
