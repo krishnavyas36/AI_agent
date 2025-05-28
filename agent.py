@@ -77,8 +77,10 @@ def streamlit_agent_interface():
 
         with tab1:
             st.sidebar.header("Shipment Input")
-            distance = st.sidebar.number_input("Distance (km)", min_value=0.0, value=500.0)
-            weight = st.sidebar.number_input("Weight (kg)", min_value=0.0, value=1000.0)
+            distance_miles = st.sidebar.number_input("Distance (miles)", min_value=0.0, value=500.0)
+            distance = distance_miles * 1.60934  # convert to km
+            weight_lbs = st.sidebar.number_input("Weight (lbs)", min_value=0.0, value=1000.0)
+            weight = weight_lbs * 0.453592  # convert to kg
             urgency = st.sidebar.selectbox("Urgency", ['Low', 'Medium', 'High'])
 
             if st.sidebar.button("Get Recommendation"):
@@ -125,6 +127,7 @@ def streamlit_agent_interface():
                     mime="text/csv"
                 )
 
+                #  Retraining trigger from user log
                 if st.button("Retrain Model from Decision Log"):
                     try:
                         retrain_df = log_df.rename(columns={

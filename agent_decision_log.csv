@@ -4,3 +4,6 @@ Distance_km,Weight_kg,Urgency,Recommended_Mode,Estimated_Cost,Estimated_ETA_days
 500.0,1000.0,Low,Transload,400.0,5
 500.0,1000.0,Low,Transload,400.0,5
 500.0,1000.0,Low,Transload,400.0,5
+500.0,1000.0,Low,Transload,400.0,5
+804.67,1000.0,Low,Transload,582.8,5
+804.2193848000004,45.3592,Medium,Drayage,728.33,3
